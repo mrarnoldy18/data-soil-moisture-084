@@ -13,7 +13,13 @@ st.title("📊 DASHBOARD SOIL MOISTURE")
 # ===============================
 # LOAD DATA
 # ===============================
-df = pd.read_csv("data_soil_moisture_clean.csv")
+@st.cache_data
+def load_data():
+    data_path = Path(__file__).resolve().parents[1] / "Outputs/data_soil_moisture_clean.csv"
+    df = pd.read_csv(data_path)
+    return df
+
+df = load_data()
 
 # ===============================
 # HITUNG RATA-RATA
@@ -96,5 +102,6 @@ st.markdown(f"""
 • Tidak terdapat indikasi **tanah terlalu kering atau terlalu basah**
 
 """)
+
 
 

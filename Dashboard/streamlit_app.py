@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+from pathlib import Path
 
 # ===============================
 # CONFIG PAGE
@@ -102,6 +103,7 @@ st.markdown(f"""
 • Tidak terdapat indikasi **tanah terlalu kering atau terlalu basah**
 
 """)
+
 
 
 
